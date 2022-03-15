@@ -60,7 +60,7 @@ exports.index= async(req, res)=>{
 // detele
 exports.delete = async(req, res) =>{
     try {
-        const {id} = req.body;
+        const {id} = req.params;
 
    if(!id){
     res.status(400).json({
@@ -89,7 +89,8 @@ exports.delete = async(req, res) =>{
 
 exports.update =async (req, res)=>{
     try {
-        const {id,no, laoContent,engContent} = req.body;
+        const {id} = req.params;
+        const {no, laoContent,engContent} = req.body;
     if(!id){
         
         res.status(400).json({

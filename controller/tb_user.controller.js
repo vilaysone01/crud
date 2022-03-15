@@ -79,7 +79,7 @@ exports.search= async (req, res, next)=>{
 
 // delete data
 exports.delete= async (req, res, next)=>{
-    const {id} = req.body;
+    const {id} = req.params;
     if(!id){
         res.status(400).json({
             message:'not found id'
@@ -104,7 +104,7 @@ exports.delete= async (req, res, next)=>{
 
 exports.update=async(req,res, next)=>{
     const {
-        id,
+        
         f_name,
         l_name,
         email,
@@ -112,6 +112,7 @@ exports.update=async(req,res, next)=>{
         role_id,
         section_id
     } = req.body;
+    const {id} = req.params;
     if(!id){
         res.status(400).json({
             message:'not found id'

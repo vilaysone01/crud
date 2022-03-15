@@ -74,7 +74,8 @@ exports.insert= async (req, res, next)=>{
     
     // update
     exports.update = async(req, res, next)=>{
-        const {id,name} =  req.body;
+        const {id} =  req.params;
+        const {name} =  req.body;
         const role = await model.tb_section.update({
             name:name
         },{
@@ -94,7 +95,7 @@ exports.insert= async (req, res, next)=>{
     // delete
     
     exports.delete = async (req, res)=>{
-        const {id} = req.body;
+        const {id} = req.params;
     
         if(!id){
             res.status(400).json({

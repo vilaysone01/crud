@@ -11,10 +11,16 @@ module.exports = {
       no: {
         type: Sequelize.INTEGER
       },
-      laoContent: {
+      lao_topic: {
+        type: Sequelize.STRING
+      },
+      eng_topic: {
+        type: Sequelize.STRING
+      },
+      lao_Content: {
         type: Sequelize.TEXT
       },
-      engContent: {
+      eng_Content: {
         type: Sequelize.TEXT
       },
       createdAt: {
